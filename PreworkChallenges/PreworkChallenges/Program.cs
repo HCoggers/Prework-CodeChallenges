@@ -18,13 +18,18 @@ namespace PreworkChallenges
             Console.WriteLine($"You entered {inputOne}. Please select one digit from this array.");
 
             //Request single digit selection from user
-            int inputTwo = Int32.Parse(Console.ReadLine());
+            double inputTwo = double.Parse(Console.ReadLine());
             Console.WriteLine($"You selected {inputTwo}.");
 
             //Calculate score (digit * frequency)
+            double multiplier = 0;
+            foreach(char digit in arrayInput) 
+                if (Char.GetNumericValue(digit) == inputTwo) multiplier++;
+
+            double score = inputTwo * multiplier;
 
             //Print score
-
+            Console.WriteLine($"You scored {score}!");
         }
     }
 }
