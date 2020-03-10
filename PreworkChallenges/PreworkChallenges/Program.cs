@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace PreworkChallenges
 {
@@ -12,24 +13,29 @@ namespace PreworkChallenges
             //Request 5-digit array from user
             Console.WriteLine("Hello. Please input 5 digits. You may use the same digit more than once.");
 
-            string inputOne = Console.ReadLine();
-            char[] arrayInput = inputOne.ToCharArray();
-         
-            Console.WriteLine($"You entered {inputOne}. Please select one digit from this array.");
+            string arrayInput = Console.ReadLine();
+            int[] input1 = Array.ConvertAll(arrayInput.ToCharArray(), c => (int)Char.GetNumericValue(c));
 
             //Request single digit selection from user
-            double inputTwo = double.Parse(Console.ReadLine());
-            Console.WriteLine($"You selected {inputTwo}.");
+            Console.WriteLine($"You entered {arrayInput}. Please select one digit from this array.");
+
+            int input2 = int.Parse(Console.ReadLine());
+            Console.WriteLine($"You selected {input2}.");
 
             //Calculate score (digit * frequency)
-            double multiplier = 0;
-            foreach(char digit in arrayInput) 
-                if (Char.GetNumericValue(digit) == inputTwo) multiplier++;
+            int score = ArrayScore(input1, input2);
 
-            double score = inputTwo * multiplier;
-
-            //Print score
             Console.WriteLine($"You scored {score}!");
+        }
+
+        static int ArrayScore(int[] numbers, int guess)
+        {
+            int multiplier = 0;
+
+            foreach (int number in numbers)
+                if (number == guess) multiplier++;
+
+            return multiplier * guess;
         }
     }
 }
