@@ -1,2 +1,2 @@
 # dotnet-PreworkChallenges
-4 Console programs, solving challenges is C#
+4 Console programs, solving challenges in C#
