@@ -8,8 +8,10 @@ namespace PreworkChallenges
         {
 
             int[,] someMatrix = RequestMatrix();
-            
-            Console.WriteLine("Given your matrix The sums of each row are:");
+
+            ShowMatrix(someMatrix);
+
+            Console.WriteLine("\nGiven your matrix The sums of each row are:");
             int[] result = SumMatrix(someMatrix);
             foreach (int n in result)
                 Console.Write($" {n} ");
@@ -52,6 +54,18 @@ namespace PreworkChallenges
                 }
             
             return result;
+        }
+        static void ShowMatrix(int[,] matrix)
+        {
+            Console.Clear();
+            for (int r = 0; r < matrix.GetLength(0); r++)
+            {
+                Console.WriteLine(" ");
+                for (int c = 0; c < matrix.GetLength(1); c++)
+                {
+                    Console.Write($"[{matrix[r, c]}] ");
+                }
+            }
         }
     }
 }
