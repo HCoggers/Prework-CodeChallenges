@@ -10,3 +10,5 @@ Multiply their chosen number by how many times it appears within the array to fi
 
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/31331154/76210883-42c55600-61c2-11ea-9833-1ad97810d2a1.png)
+=======
+
