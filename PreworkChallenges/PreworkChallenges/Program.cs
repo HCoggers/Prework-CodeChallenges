@@ -43,7 +43,6 @@ namespace PreworkChallenges
             int score = ArrayScore(input1, input2);
 
             Console.WriteLine($"You scored {score}!");
-        
 
             static int ArrayScore(int[] numbers, int guess)
             {
