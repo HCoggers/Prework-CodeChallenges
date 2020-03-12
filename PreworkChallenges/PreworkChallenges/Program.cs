@@ -9,7 +9,11 @@ namespace PreworkChallenges
         {
 
             // ----- PROJECT 1: Array Max Result -----
-
+            Project1();
+            
+        }
+        static void Project1()
+        {
             //Request 5-digit array from user
             Console.WriteLine("Hello. Please input 5 digits. You may use the same digit more than once.");
 
@@ -26,16 +30,16 @@ namespace PreworkChallenges
             int score = ArrayScore(input1, input2);
 
             Console.WriteLine($"You scored {score}!");
-        }
 
-        static int ArrayScore(int[] numbers, int guess)
-        {
-            int multiplier = 0;
+            static int ArrayScore(int[] numbers, int guess)
+            {
+                int multiplier = 0;
 
-            foreach (int number in numbers)
-                if (number == guess) multiplier++;
+                foreach (int number in numbers)
+                    if (number == guess) multiplier++;
 
-            return multiplier * guess;
+                return multiplier * guess;
+            }
         }
     }
 }
