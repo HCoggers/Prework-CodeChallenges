@@ -9,7 +9,8 @@ namespace PreworkChallenges
         {
             Console.WriteLine("Please select a challenge: \n " +
                 "1) Array Max Result\n " +
-                "2) Leap Year Calculator\n ");
+                "2) Leap Year Calculator\n " +
+                "3) Perfect Sequence\n ");
 
             string choice = Console.ReadLine();
             switch(choice)
@@ -21,6 +22,10 @@ namespace PreworkChallenges
                 // ----- PROJECT 2: Leap Year Calculator -----
                 case "2":
                     Project2();
+                    break;
+                // ----- PROJECT 3: Perfect Sequence -----
+                case "3":
+                    Project3();
                     break;
             }
 
@@ -64,6 +69,27 @@ namespace PreworkChallenges
                 Console.WriteLine("Congratulations! you found a Leap Year!");
             else
                 Console.WriteLine("Nah, man, that's just a normal 365-day year.");
+        }
+        static void Project3()
+        {
+            // request integer sequence
+            Console.WriteLine("Please input a sequence of numbers to check:");
+            int[] input = Array.ConvertAll(Console.ReadLine().ToCharArray(), c => (int)Char.GetNumericValue(c));
+
+            // determine if input is a perfect sequence
+            Console.WriteLine(IsPerfectSequence(input) ? "It's a Perfect Sequence!" : "Hmm... well, It's not perfect...");
+
+            static bool IsPerfectSequence(int[] sequence)
+            {
+                int product = 1;
+                int sum = 0;
+                foreach (int n in sequence)
+                {
+                    product *= n;
+                    sum += n;
+                }
+                return product == sum;
+            }
         }
     }
 }
